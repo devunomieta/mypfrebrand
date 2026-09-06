@@ -4,14 +4,14 @@ import PageHeader from '@/components/PageHeader';
 import SectionLabel from '@/components/SectionLabel';
 import PillarGrid from '@/components/PillarGrid';
 import Timeline from '@/components/Timeline';
-import StackGrid from '@/components/StackGrid';
+import ProcessGrid from '@/components/ProcessGrid';
 import Reveal from '@/components/Reveal';
 import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Six years building and leading product frontends end-to-end across sports, fintech, e-commerce, and education.',
+    'Six years building and leading products end-to-end across sports, fintech, e-commerce, and education.',
 };
 
 const education = [
@@ -52,7 +52,7 @@ export default function AboutPage() {
         }
         intro={site.intro}
         meta={[
-          { k: 'Discipline', v: 'Frontend / Product Engineering' },
+          { k: 'Discipline', v: 'Product Engineering' },
           { k: 'Experience', v: '6 years · CTO → GM' },
           { k: 'Based', v: 'Nigeria — Remote worldwide' },
         ]}
@@ -64,11 +64,11 @@ export default function AboutPage() {
             <SectionLabel index="01">The short version</SectionLabel>
             <div className="space-y-5 text-lg leading-relaxed text-mist">
               <p>
-                I&rsquo;m a product-minded frontend engineer who&rsquo;s spent six
-                years solving problems other people were stuck on — building and
-                leading the systems that let a sports scouting network run its
-                platform, a savings group manage member finances, and a state
-                ministry get hundreds of staff onto new digital tools.
+                I&rsquo;m a product-minded engineer who&rsquo;s spent six years
+                solving problems other people were stuck on — building and leading
+                the systems that let a sports scouting network run its platform, a
+                savings group manage member finances, and a state ministry get
+                hundreds of staff onto new digital tools.
               </p>
               <p>
                 I don&rsquo;t lead with a tech stack; I lead with the outcome. My
@@ -84,7 +84,7 @@ export default function AboutPage() {
 
       <section className="border-t border-white/10 bg-ink-2 py-20 md:py-28">
         <Container>
-          <SectionLabel index="02">How I work</SectionLabel>
+          <SectionLabel index="02">The approach</SectionLabel>
           <div className="mt-10">
             <PillarGrid />
           </div>
@@ -102,9 +102,9 @@ export default function AboutPage() {
 
       <section className="border-t border-white/10 bg-ink-2 py-20 md:py-28">
         <Container>
-          <SectionLabel index="04">Toolkit</SectionLabel>
+          <SectionLabel index="04">How I work</SectionLabel>
           <div className="mt-10">
-            <StackGrid />
+            <ProcessGrid />
           </div>
         </Container>
       </section>

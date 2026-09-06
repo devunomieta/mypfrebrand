@@ -32,7 +32,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
           {project?.punchline}
         </div>
         <div style={{ display: 'flex', fontSize: 22, color: '#FAF9F6', opacity: 0.7, marginTop: 48 }}>
-          Joseph Unomieta — Senior Frontend Engineer
+          Joseph Unomieta — Problem-First Product Engineer
         </div>
       </div>
     ),

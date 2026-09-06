@@ -8,16 +8,21 @@ import Reveal from '@/components/Reveal';
 import MetricBand from '@/components/MetricBand';
 import CapabilityGrid from '@/components/CapabilityGrid';
 import PillarGrid from '@/components/PillarGrid';
-import StackGrid from '@/components/StackGrid';
+import ProcessGrid from '@/components/ProcessGrid';
 import ProjectCard from '@/components/ProjectCard';
 import PostCard from '@/components/PostCard';
-import { site, stack } from '@/lib/site';
+import { site } from '@/lib/site';
 import { projects } from '@/lib/projects';
 import { getAllPosts } from '@/lib/posts';
 
 const marqueeItems = [
-  ...stack.flatMap((s) => s.items).slice(0, 14),
+  ...site.industries,
+  'Problem-first',
   'Ships end-to-end',
+  'Bilingual by design',
+  'Built to last',
+  'On time, on budget',
+  ...projects.map((p) => p.name),
 ];
 
 export default async function HomePage() {
@@ -40,17 +45,17 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* Capabilities */}
+      {/* What I do */}
       <section className="border-t border-white/10 bg-ink-2 py-20 md:py-28">
         <Container>
           <div className="max-w-2xl">
-            <SectionLabel index="01">Capabilities</SectionLabel>
+            <SectionLabel index="01">What I do</SectionLabel>
             <h2 className="mt-6 font-serif text-3xl font-black tracking-tight text-offwhite md:text-4xl">
-              Where I do my best work
+              Four problems I keep solving
             </h2>
             <p className="mt-4 text-mist">
-              Four areas I go deep on. Everything else is in service of shipping
-              these well.
+              The shapes recur even when the industries don&rsquo;t. This is where
+              I get called in.
             </p>
           </div>
           <div className="mt-12">
@@ -63,7 +68,7 @@ export default async function HomePage() {
       <section className="border-t border-white/10 bg-ink py-20 md:py-28">
         <Container>
           <div className="max-w-2xl">
-            <SectionLabel index="02">Approach</SectionLabel>
+            <SectionLabel index="02">The approach</SectionLabel>
             <h2 className="mt-6 font-serif text-3xl font-black tracking-tight text-offwhite md:text-4xl">
               Not a generalist. A problem solver.
             </h2>
@@ -80,7 +85,7 @@ export default async function HomePage() {
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <SectionLabel index="03">Selected work</SectionLabel>
+              <SectionLabel index="03">Where I&rsquo;ve solved problems</SectionLabel>
               <h2 className="mt-6 font-serif text-3xl font-black tracking-tight text-offwhite md:text-4xl">
                 Different industries. Same instinct.
               </h2>
@@ -103,20 +108,20 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* Stack */}
+      {/* Process */}
       <section className="border-t border-white/10 bg-ink py-20 md:py-28">
         <Container>
           <div className="max-w-2xl">
-            <SectionLabel index="04">Toolkit</SectionLabel>
+            <SectionLabel index="04">How I work</SectionLabel>
             <h2 className="mt-6 font-serif text-3xl font-black tracking-tight text-offwhite md:text-4xl">
-              The stack I reach for
+              Same three moves, every project
             </h2>
             <p className="mt-4 text-mist">
-              Tools are means, not identity — but these are the ones I know cold.
+              The tools change per problem. The method doesn&rsquo;t.
             </p>
           </div>
           <div className="mt-12">
-            <StackGrid />
+            <ProcessGrid />
           </div>
         </Container>
       </section>

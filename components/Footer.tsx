@@ -65,8 +65,7 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 text-xs text-mist md:flex-row md:items-center">
           <p>
-            © {new Date().getFullYear()} {site.name}. Built with Next.js, React Three
-            Fiber &amp; Tailwind.
+            © {new Date().getFullYear()} {site.name}. Built with Next.js.
           </p>
           <p className="font-mono-label">{site.availability}</p>
         </div>

@@ -1,15 +1,15 @@
 export const site = {
   name: 'Joseph Unomieta',
-  tagline: 'Senior Frontend Engineer',
-  roleLine: 'Senior Frontend Engineer — building fast, resilient product UIs',
+  tagline: 'Problem-First Product Engineer',
+  roleLine: 'Problem-First Product Engineer',
   industries: ['Sports', 'E-Commerce', 'Education', 'Fintech'],
   punchline:
-    "I don't sell a tech stack. I ship interfaces that hold up — under real users, real data, and real deadlines.",
+    "I don't sell a tech stack. I solve business problems that happen to need software.",
   intro:
-    "Six years turning ambiguous product problems into shipped, maintainable frontends. I work close to the metal of the browser and close to the business — equally comfortable profiling a render loop or scoping a roadmap.",
+    'Six years building and leading products end-to-end — a sports scouting platform, an automated savings and loans system, e-commerce storefronts, and the digital tools that moved a state ministry off analogue systems. My path runs from frontend to fullstack, startup CTO to government IT lead, developer to product manager — so I can own a problem from the code to the business outcome.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.devunomieta.xyz',
   location: 'Nigeria — working remote, worldwide',
-  availability: 'Open to senior frontend & product-engineering roles',
+  availability: 'Available for new problems',
   contact: {
     website: 'www.devunomieta.xyz',
     handle: '@DEVUNOMIETA',
@@ -24,58 +24,50 @@ export const site = {
 };
 
 export const metrics: { value: string; label: string }[] = [
-  { value: '6 yrs', label: 'Shipping production frontends' },
+  { value: '6 yrs', label: 'Building & leading products end-to-end' },
   { value: '4', label: 'Industries delivered in' },
-  { value: '60%', label: 'Team productivity lift as CTO' },
-  { value: '100%', label: 'Client apps delivered on time' },
+  { value: '60%', label: 'Engineering productivity lift as CTO' },
+  { value: '100%', label: 'Client apps delivered on time, on budget' },
 ];
 
-export const stack: { group: string; items: string[] }[] = [
+// How the work actually gets done — no tech-stack list, by design.
+export const workflow: { no: string; title: string; body: string }[] = [
   {
-    group: 'Core',
-    items: ['TypeScript', 'React', 'Next.js', 'Remix', 'JavaScript (ES2023)'],
+    no: '01',
+    title: 'Discovery',
+    body: 'Get to the real problem before any code. Talk to the people stuck on it, map how the work actually flows, and find where it breaks.',
   },
   {
-    group: 'UI & Motion',
-    items: ['Tailwind CSS', 'CSS Architecture', 'Framer Motion', 'Radix', 'Design Systems'],
+    no: '02',
+    title: 'Delivery',
+    body: 'Build and ship it end-to-end — architecture, product, and launch. Scoped tight, delivered on time and on budget.',
   },
   {
-    group: '3D & Graphics',
-    items: ['Three.js', 'React Three Fiber', 'WebGL / GLSL', 'Canvas 2D', 'SVG'],
-  },
-  {
-    group: 'Platform',
-    items: ['Node.js', 'GraphQL', 'REST', 'Sanity', 'PostgreSQL'],
-  },
-  {
-    group: 'Quality',
-    items: ['Playwright', 'Vitest', 'Testing Library', 'Web Vitals', 'a11y / WCAG'],
-  },
-  {
-    group: 'Delivery',
-    items: ['CI/CD', 'Vercel', 'Storybook', 'Feature flags', 'Observability'],
+    no: '03',
+    title: 'Operations',
+    body: 'Stay past the launch: automation, dashboards, and training so the system keeps running long after the handover.',
   },
 ];
 
 export const pillars = [
   {
     title: 'Ships end-to-end',
-    sub: 'Idea to live product — architecture, UI, release, and the dashboard that watches it after.',
+    sub: 'Idea to live product — not just code.',
     icon: 'rocket',
   },
   {
     title: 'Bilingual by design',
-    sub: 'Fluent in render performance and in revenue — I translate between the two without a handoff.',
+    sub: 'Equally fluent in engineering and business outcomes.',
     icon: 'chat',
   },
   {
     title: 'Cross-industry, not scattered',
-    sub: 'Same engineering instinct across sports, fintech, retail, and education — different constraints, one standard.',
+    sub: 'Same instinct, different battlefields — sports, fintech, retail, education.',
     icon: 'compass',
   },
   {
     title: 'Built to last',
-    sub: 'Typed, tested, documented. Interfaces a team can extend a year later without archaeology.',
+    sub: 'Automation and dashboards that outlive the launch.',
     icon: 'shield',
   },
 ];
@@ -83,27 +75,27 @@ export const pillars = [
 export const capabilities: { no: string; title: string; body: string; tags: string[] }[] = [
   {
     no: '01',
-    title: 'Product UI engineering',
-    body: 'Complex, stateful interfaces — dashboards, editors, multi-role platforms — built component-first with a design system underneath so they stay consistent as they grow.',
-    tags: ['React', 'Next.js', 'TypeScript', 'Design systems'],
+    title: 'Product & platform builds',
+    body: 'Full applications from zero — multi-role platforms, member dashboards, admin tooling. CenterKick and Mary’s Thrift Finance were built and led end-to-end.',
+    tags: ['Web apps', 'Dashboards', 'CMS / RBAC', 'APIs'],
   },
   {
     no: '02',
-    title: 'Performance & Core Web Vitals',
-    body: 'Profiling real render paths, cutting bundle weight, streaming server components, and getting LCP/INP into the green on mid-range devices and slow networks.',
-    tags: ['Web Vitals', 'Profiling', 'Streaming SSR', 'Edge'],
+    title: 'Automation & internal tools',
+    body: 'Replacing manual and analogue processes with software that runs itself: contribution tracking, loan management, a state ministry moved off paper.',
+    tags: ['Process automation', 'Admin tooling', 'Self-service'],
   },
   {
     no: '03',
-    title: 'Interactive & 3D interfaces',
-    body: 'WebGL and Three.js work that earns its place — 3D product views, spatial navigation, motion systems — with graceful fallbacks and a strict performance budget.',
-    tags: ['Three.js', 'R3F', 'GLSL', 'Motion'],
+    title: 'Technical leadership',
+    body: 'Owning delivery as CTO and General Manager — team standards, hiring, and shipping four major client apps 100% on time and on budget.',
+    tags: ['CTO / GM', 'Delivery', 'Team standards', 'Roadmap'],
   },
   {
     no: '04',
-    title: 'Frontend architecture & DX',
-    body: 'Monorepo structure, typed API boundaries, CI gates, Storybook, and the conventions that let a team of engineers move fast without breaking each other.',
-    tags: ['Monorepo', 'CI/CD', 'Testing', 'Tooling'],
+    title: 'Emerging tech, applied',
+    body: 'Research-led product decisions and explainable AI built for local realities — see Affiong-AI and the ed-tech work at Hachstacks.',
+    tags: ['Explainable AI', 'Research', 'Ed-tech'],
   },
 ];
 
@@ -116,20 +108,20 @@ export const timeline = [
       ['60%', 'engineering productivity lift'],
       ['+40%', 'client satisfaction'],
     ],
-    note: '4 major client apps delivered 100% on time and on budget. Set the frontend standards, tooling, and review culture the team still runs on.',
+    note: '4 major client apps delivered 100% on time, on budget.',
   },
   {
     company: 'State Min. of Info. & Comms. (NYSC)',
     role: 'IT Specialist',
     dates: 'Feb – Dec 2025',
     stats: [],
-    note: "Replaced analogue systems with digital tools across the Commissioner's office; trained civil servants, staff, and corps members to run them.",
+    note: "Replaced analogue systems with digital tools across the Commissioner's office; trained civil servants, staff, and corps members.",
   },
   {
     company: 'Netisens ICT Academy',
     role: 'Project / Product Management Tutor',
     dates: 'Oct 2023 – Jul 2024',
     stats: [],
-    note: 'Tutored students to PMI standard; built the practical, case-study curriculum from scratch.',
+    note: 'Tutored students to PMI standard; built the practical, case-study curriculum.',
   },
 ];

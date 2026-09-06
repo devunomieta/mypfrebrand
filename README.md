@@ -1,8 +1,8 @@
 # Joseph Unomieta — Personal Site
 
 Next.js (App Router) + Tailwind, with a WebGL hero (Three.js / React Three Fiber)
-and Framer Motion. Dark, technical "senior frontend engineer" aesthetic. Blog runs
-on Sanity (headless CMS), deployed on Vercel.
+and Framer Motion. Dark, technical aesthetic. Blog runs on Sanity (headless CMS),
+deployed on Vercel.
 
 ## Frontend architecture notes
 

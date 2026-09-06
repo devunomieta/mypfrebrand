@@ -8,7 +8,7 @@ import { getAllPosts } from '@/lib/posts';
 export const metadata: Metadata = {
   title: 'Blog',
   description:
-    'Notes on building product frontends across sports, fintech, e-commerce, and education.',
+    'Notes on building products across sports, fintech, e-commerce, and education.',
 };
 
 export const revalidate = 60;
@@ -26,7 +26,7 @@ export default async function BlogIndexPage() {
             Notes from <span className="text-gradient">the build.</span>
           </>
         }
-        intro="Occasional essays on frontend architecture, shipping under constraints, and what four industries have in common underneath."
+        intro="Occasional essays on building products, shipping under constraints, and what four industries have in common underneath."
         meta={[
           { k: 'Posts', v: String(posts.length) },
           { k: 'Cadence', v: 'When it earns it' },

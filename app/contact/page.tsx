@@ -38,7 +38,7 @@ export default function ContactPage() {
         meta={[
           { k: 'Response time', v: '1–2 days' },
           { k: 'Timezone', v: 'WAT (UTC+1)' },
-          { k: 'Status', v: 'Open to work' },
+          { k: 'Status', v: 'Open to new problems' },
         ]}
       />
 

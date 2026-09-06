@@ -1,10 +1,8 @@
 import Link from 'next/link';
 import { ArrowUpRight, ArrowDown } from 'lucide-react';
 import Container from '../Container';
-import { site, stack } from '@/lib/site';
+import { site } from '@/lib/site';
 import Hero3D from './Hero3D';
-
-const toolCount = stack.reduce((n, s) => n + s.items.length, 0);
 
 export default function Hero() {
   return (
@@ -24,14 +22,20 @@ export default function Hero() {
             <span className="font-mono-label text-mist">{site.availability}</span>
           </div>
 
-          <h1 className="mt-7 font-serif text-[15vw] font-black leading-[0.92] tracking-tight text-offwhite sm:text-6xl lg:text-[5.4rem]">
-            <span className="block type-3d">Senior</span>
-            <span className="block type-3d">Frontend</span>
-            <span className="block text-gradient">Engineer</span>
+          <h1 className="mt-7 font-serif text-[15vw] font-black leading-[0.92] tracking-tight text-offwhite sm:text-6xl lg:text-[5.6rem]">
+            <span className="block type-3d">Joseph</span>
+            <span className="block text-gradient">Unomieta</span>
           </h1>
 
-          <p className="mt-7 max-w-xl text-lg leading-relaxed text-mist">
-            {site.punchline}
+          <p className="mt-6 font-mono-label text-gold">
+            Problem-First Product Engineer
+          </p>
+          <p className="mt-2 font-mono-label text-coral">
+            {site.industries.join('  ·  ')}
+          </p>
+
+          <p className="mt-7 max-w-xl text-lg italic leading-relaxed text-mist">
+            &ldquo;{site.punchline}&rdquo;
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
@@ -43,10 +47,10 @@ export default function Hero() {
               <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
             <Link
-              href="/contact"
+              href="/blog"
               className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-offwhite transition hover:border-white/40"
             >
-              Start a conversation
+              Read the blog
             </Link>
           </div>
 
@@ -54,7 +58,7 @@ export default function Hero() {
             {[
               ['Based', 'Nigeria · Remote'],
               ['Experience', '6 years'],
-              ['Toolkit', `${toolCount}+ tools`],
+              ['Ownership', 'Code → outcome'],
             ].map(([k, v]) => (
               <div key={k}>
                 <dt className="font-mono-label text-mist">{k}</dt>
@@ -69,10 +73,10 @@ export default function Hero() {
           <div className="absolute inset-0 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-transparent">
             <Hero3D />
             <div className="pointer-events-none absolute left-4 top-4 font-mono text-[0.65rem] text-offwhite/40">
-              webgl · react-three-fiber
+              webgl · real-time
             </div>
             <div className="pointer-events-none absolute bottom-4 right-4 font-mono text-[0.65rem] text-offwhite/40">
-              drag / move — it responds
+              move your cursor — it responds
             </div>
           </div>
         </div>
