@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { CheckCircle2 } from 'lucide-react';
+import PageLoader from './PageLoader';
 
 const fieldClass =
   'w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-offwhite placeholder-mist/50 outline-none transition focus:border-gold/60 focus:bg-white/[0.05]';
@@ -46,6 +47,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-5">
+      {status === 'sending' && <PageLoader label="Submitting" />}
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label
