@@ -3,8 +3,9 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, CreditCard } from 'lucide-react';
 import Container from './Container';
+import BusinessCardModal from './business-card/BusinessCardModal';
 import { site } from '@/lib/site';
 
 const links = [
@@ -18,6 +19,7 @@ export default function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [cardOpen, setCardOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -82,16 +84,17 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link
-            href="/contact"
+          <button
+            type="button"
+            onClick={() => setCardOpen(true)}
             className="group hidden items-center gap-2 rounded-full bg-offwhite px-4 py-2 text-sm font-semibold text-ink transition hover:bg-gold md:inline-flex"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-coral opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-coral" />
             </span>
-            Available
-          </Link>
+            My card
+          </button>
           <button
             onClick={() => setOpen((v) => !v)}
             className="relative z-50 grid h-9 w-9 place-items-center rounded-lg border border-white/15 text-offwhite md:hidden"
@@ -144,10 +147,21 @@ export default function Header() {
           </nav>
 
           <div className="relative mt-8">
+            <button
+              type="button"
+              onClick={() => {
+                setOpen(false);
+                setCardOpen(true);
+              }}
+              className="flex w-full items-center justify-center gap-2 rounded-full border border-white/15 px-5 py-4 text-sm font-semibold text-offwhite"
+            >
+              <CreditCard className="h-4 w-4" />
+              View card
+            </button>
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="flex items-center justify-center gap-2 rounded-full bg-offwhite px-5 py-4 text-sm font-semibold text-ink"
+              className="mt-3 flex items-center justify-center gap-2 rounded-full bg-offwhite px-5 py-4 text-sm font-semibold text-ink"
             >
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-coral opacity-75" />
@@ -173,6 +187,8 @@ export default function Header() {
           </div>
         </div>
       </div>
+
+      <BusinessCardModal open={cardOpen} onClose={() => setCardOpen(false)} />
     </header>
   );
 }

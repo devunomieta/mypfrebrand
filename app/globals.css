@@ -173,6 +173,91 @@ body {
 }
 
 /* ---------------------------------------------------------------
+   Business-card modal (docs/interactive-business-card.md)
+--------------------------------------------------------------- */
+.card-dialog {
+  width: 100vw;
+  height: 100dvh;
+  max-width: 100vw;
+  max-height: 100dvh;
+  margin: 0;
+  padding: 1.25rem;
+  border: 0;
+  background: rgba(4, 5, 10, 0.74);
+  overflow: auto;
+  /* centre the panel; the surrounding area is the click-to-close backdrop */
+  display: grid;
+  place-items: center;
+}
+.card-dialog:not([open]) {
+  display: none;
+}
+.card-dialog::backdrop {
+  background: rgba(4, 5, 10, 0.74);
+}
+@supports (backdrop-filter: blur(2px)) {
+  .card-dialog {
+    backdrop-filter: blur(5px);
+  }
+}
+.card-dialog[open] > * {
+  animation: card-pop 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes card-pop {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Flip scene */
+.card-scene {
+  width: min(92vw, 420px);
+  perspective: 1500px;
+}
+.card-3d {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1600 / 907; /* matches the extracted card artwork */
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-3d.is-flipped {
+  transform: rotateY(180deg);
+}
+.card-face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #1b1b1b;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 30px 60px -20px rgba(0, 0, 0, 0.55),
+    0 12px 24px -12px rgba(0, 0, 0, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.card-face--back {
+  transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-3d {
+    transition: none;
+  }
+  .card-dialog[open] > * {
+    animation: none;
+  }
+}
+
+/* ---------------------------------------------------------------
    Long-form article styling
 --------------------------------------------------------------- */
 .prose-post {

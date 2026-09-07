@@ -14,7 +14,7 @@ export const site = {
     website: 'www.devunomieta.xyz',
     handle: '@DEVUNOMIETA',
     phone: '+234 (815) 6841-952',
-    email: 'lionelunomieta@gmail.com',
+    email: 'devunomieta@gmail.com',
   },
   socials: {
     x: 'https://x.com/DEVUNOMIETA',
@@ -22,6 +22,45 @@ export const site = {
     github: 'https://github.com/DEVUNOMIETA',
   },
 };
+
+// Digital twin of the printed complimentary card (docs/interactive-business-card.md).
+// One source of truth so the print card and the web card can't drift.
+const CV_DOC_ID = '1kC1weq0hE66fzUcXEVztZD6omJ3jkigStzWfv2C96ME';
+
+export const card = {
+  name: 'Joseph Unomieta',
+  role: 'Software Engineer & Product Manager',
+  tagline: 'Building Scalable Software Solutions & Driving Product Growth',
+  email: 'devunomieta@gmail.com',
+  linktree: 'https://linktr.ee/devunomieta',
+  cv: {
+    view: `https://docs.google.com/document/d/${CV_DOC_ID}/preview`,
+    pdf: `https://docs.google.com/document/d/${CV_DOC_ID}/export?format=pdf`,
+  },
+  // The two faces of the printed card, extracted from docs/C A R D.pdf.
+  images: {
+    front: '/card/card-front.jpg',
+    back: '/card/card-back.jpg',
+    // native pixel size of the artwork — drives the flip frame's aspect ratio
+    width: 1600,
+    height: 907,
+  },
+  // Both numbers are reachable on WhatsApp.
+  numbers: [
+    {
+      display: '0815 684 1952',
+      whatsapp: 'https://wa.me/2348156841952?text=Hi%20Joseph%2C%20I%20found%20your%20card',
+      tel: 'tel:+2348156841952',
+      primary: true,
+    },
+    {
+      display: '0704 989 8962',
+      whatsapp: 'https://wa.me/2347049898962?text=Hi%20Joseph%2C%20I%20found%20your%20card',
+      tel: 'tel:+2347049898962',
+      primary: false,
+    },
+  ],
+} as const;
 
 export const metrics: { value: string; label: string }[] = [
   { value: '6 yrs', label: 'Building & leading products end-to-end' },
