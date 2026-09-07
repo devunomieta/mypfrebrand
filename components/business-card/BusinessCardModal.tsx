@@ -1,7 +1,11 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import BusinessCard from './BusinessCard';
+import dynamic from 'next/dynamic';
+
+// The card body (flip scene, next/image, icon set) is only needed once the modal
+// is actually opened — keep it out of the shared bundle.
+const BusinessCard = dynamic(() => import('./BusinessCard'), { ssr: false });
 
 export default function BusinessCardModal({
   open,

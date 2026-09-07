@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { ArrowUpRight, ArrowDown } from 'lucide-react';
+import { ArrowUpRight, ArrowDown, CreditCard } from 'lucide-react';
 import Container from '../Container';
+import OpenCardButton from '../business-card/OpenCardButton';
 import { site } from '@/lib/site';
 import Hero3D from './Hero3D';
 
@@ -30,12 +31,13 @@ export default function Hero() {
           <p className="mt-6 font-mono-label text-gold">
             Problem-First Product Engineer
           </p>
-          <p className="mt-2 font-mono-label text-coral">
-            {site.industries.join('  ·  ')}
+
+          <p className="mt-6 max-w-xl text-lg italic leading-relaxed text-mist">
+            &ldquo;{site.punchline}&rdquo;
           </p>
 
-          <p className="mt-7 max-w-xl text-lg italic leading-relaxed text-mist">
-            &ldquo;{site.punchline}&rdquo;
+          <p className="mt-6 font-mono-label text-coral">
+            {site.industries.join('  ·  ')}
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
@@ -46,12 +48,10 @@ export default function Hero() {
               See the work
               <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-offwhite transition hover:border-white/40"
-            >
-              Read the blog
-            </Link>
+            <OpenCardButton className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-offwhite transition hover:border-white/40">
+              <CreditCard className="h-4 w-4" />
+              View My Card
+            </OpenCardButton>
           </div>
 
           <dl className="mt-12 grid max-w-lg grid-cols-3 gap-x-6 gap-y-2 border-t border-white/10 pt-6">

@@ -6,7 +6,8 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, ArrowUpRight, CreditCard } from 'lucide-react';
 import Container from './Container';
 import BusinessCardModal from './business-card/BusinessCardModal';
-import { site } from '@/lib/site';
+import { OPEN_CARD_EVENT } from './business-card/OpenCardButton';
+import { site, card } from '@/lib/site';
 
 const links = [
   { href: '/work', label: 'Work' },
@@ -20,12 +21,20 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [cardOpen, setCardOpen] = useState(false);
+  const openCard = () => setCardOpen(true);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // Other components open the card by dispatching a DOM event (see OpenCardButton).
+  useEffect(() => {
+    const onOpen = () => setCardOpen(true);
+    window.addEventListener(OPEN_CARD_EVENT, onOpen);
+    return () => window.removeEventListener(OPEN_CARD_EVENT, onOpen);
   }, []);
 
   useEffect(() => setOpen(false), [pathname]);
@@ -86,14 +95,14 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <button
             type="button"
-            onClick={() => setCardOpen(true)}
+            onClick={openCard}
             className="group hidden items-center gap-2 rounded-full bg-offwhite px-4 py-2 text-sm font-semibold text-ink transition hover:bg-gold md:inline-flex"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-coral opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-coral" />
             </span>
-            My card
+            Let&rsquo;s talk
           </button>
           <button
             onClick={() => setOpen((v) => !v)}
@@ -151,15 +160,17 @@ export default function Header() {
               type="button"
               onClick={() => {
                 setOpen(false);
-                setCardOpen(true);
+                openCard();
               }}
               className="flex w-full items-center justify-center gap-2 rounded-full border border-white/15 px-5 py-4 text-sm font-semibold text-offwhite"
             >
               <CreditCard className="h-4 w-4" />
               View card
             </button>
-            <Link
-              href="/contact"
+            <a
+              href={card.numbers[0].whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="mt-3 flex items-center justify-center gap-2 rounded-full bg-offwhite px-5 py-4 text-sm font-semibold text-ink"
             >
@@ -168,7 +179,7 @@ export default function Header() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-coral" />
               </span>
               Start a conversation
-            </Link>
+            </a>
             <div className="mt-6 flex items-center justify-center gap-6">
               {[
                 ['LinkedIn', site.socials.linkedin],
