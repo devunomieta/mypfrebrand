@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Fraunces, Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
@@ -23,6 +23,11 @@ const jetbrains = JetBrains_Mono({
   variable: '--font-mono',
   display: 'swap',
 });
+
+export const viewport: Viewport = {
+  colorScheme: 'dark',
+  themeColor: '#08090f',
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -49,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
+      style={{ colorScheme: 'dark' }}
       className={`${fraunces.variable} ${inter.variable} ${jetbrains.variable}`}
     >
       <body>
