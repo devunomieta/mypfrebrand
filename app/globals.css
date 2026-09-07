@@ -173,6 +173,44 @@ body {
 }
 
 /* ---------------------------------------------------------------
+   Route-transition loader (app/loading.tsx -> components/PageLoader)
+--------------------------------------------------------------- */
+@keyframes ju-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+}
+/* Hold invisible for ~250ms so sub-250ms navigations never flash the loader. */
+@keyframes loader-fade-in {
+  0%,
+  55% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.page-loader {
+  animation: loader-fade-in 0.45s ease forwards;
+}
+.page-loader__ring {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    #ffc857 22%,
+    #ff5a5f 48%,
+    #6c6cff 74%,
+    transparent 100%
+  );
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 3px), #000 calc(100% - 3px));
+  mask: radial-gradient(farthest-side, #0000 calc(100% - 3px), #000 calc(100% - 3px));
+}
+
+/* ---------------------------------------------------------------
    Business-card modal (docs/interactive-business-card.md)
 --------------------------------------------------------------- */
 .card-dialog {
