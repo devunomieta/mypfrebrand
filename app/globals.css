@@ -77,12 +77,18 @@ body {
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent;
     background-image: linear-gradient(120deg, #ffffff 0%, #ffd9b0 40%, #ff8a8d 70%, #6c6cff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
   .text-gradient-tight {
-    @apply bg-clip-text text-transparent;
     background-image: linear-gradient(180deg, #ffffff 0%, #b9bdd8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 
   /* CSS "3D type" — layered extrusion. Pairs with .tilt-3d parents. */

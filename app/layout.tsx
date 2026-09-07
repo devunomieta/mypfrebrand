@@ -57,6 +57,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       style={{ colorScheme: 'dark' }}
       className={`${fraunces.variable} ${inter.variable} ${jetbrains.variable}`}
     >
+      <head>
+        <meta name="color-scheme" content="dark" />
+        <meta name="supported-color-schemes" content="dark" />
+      </head>
       <body>
         <ScrollProgress />
         <Header />
