@@ -50,7 +50,7 @@ export default function Hero() {
             </Link>
             <OpenCardButton className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-offwhite transition hover:border-white/40">
               <CreditCard className="h-4 w-4" />
-              View My Card
+              View Card
             </OpenCardButton>
           </div>
 
